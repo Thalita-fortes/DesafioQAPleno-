@@ -153,3 +153,6 @@ Cada suite de testes criará automaticamente uma pasta de resultado dentro do di
 ```
 
 Esse arquivo de README contém todos os detalhes sobre o projeto, as instruções para execução e informações sobre a organização das pastas de resultados.
+
+```
+![Logo do Projeto](./imagens/DesafioQA.png)
