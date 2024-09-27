@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240927 19:18:12.353" rpa="false" schemaversion="4">
+<suite id="s1" name="Preenchimento Forms" source="C:\Users\Thalita\Downloads\Thalitafortes\teste_qa_jr\01-resources\CenariosTestes\preenchimento_forms.robot">
+<test id="s1-t1" name="CN09 - Realizar envio do formulario com um valor de produto selecionado" line="89">
+<kw name="Nova sessao" library="ContextoSteps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240927 19:18:13.009" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<status status="PASS" starttime="20240927 19:18:13.009" endtime="20240927 19:18:14.959"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240927 19:18:14.959" endtime="20240927 19:18:14.999"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:13.009" endtime="20240927 19:18:14.999"/>
+</kw>
+<kw name="Given que estou na tela inicial do forms" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TitleTela}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:15.000" endtime="20240927 19:18:15.027"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Forneça o máximo de informações, por favor.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:18:15.043" level="INFO">Current page contains text 'Forneça o máximo de informações, por favor.'.</msg>
+<status status="PASS" starttime="20240927 19:18:15.027" endtime="20240927 19:18:15.043"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:15.000" endtime="20240927 19:18:15.043"/>
+</kw>
+<kw name="When realizar o preenchimento dos campos obrigatorios" library="preenchimento_forms_step">
+<kw name="First Name" library="FakerLibrary">
+<var>${FAKER_NAME}</var>
+<msg timestamp="20240927 19:18:15.044" level="INFO">${FAKER_NAME} = Leandro</msg>
+<status status="PASS" starttime="20240927 19:18:15.044" endtime="20240927 19:18:15.044"/>
+</kw>
+<kw name="Preencher campo" library="ContextoSteps">
+<arg>${InputName}</arg>
+<arg>${FAKER_NAME}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:15.044" endtime="20240927 19:18:15.066"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:15.066" level="INFO">Clicking element 'xpath=//input[@id="firstName"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:15.066" endtime="20240927 19:18:15.134"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:16.134" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:15.134" endtime="20240927 19:18:16.134"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240927 19:18:16.134" endtime="20240927 19:18:16.170"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:16.471" level="INFO">Slept 300 milliseconds</msg>
+<status status="PASS" starttime="20240927 19:18:16.170" endtime="20240927 19:18:16.471"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:16.472" level="INFO">Typing text 'Leandro' into text field 'xpath=//input[@id="firstName"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:16.471" endtime="20240927 19:18:16.544"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:17.545" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:16.544" endtime="20240927 19:18:17.545"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${textoAtual}</var>
+<arg>${elemento}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240927 19:18:17.570" level="INFO">${textoAtual} = Leandro</msg>
+<status status="PASS" starttime="20240927 19:18:17.545" endtime="20240927 19:18:17.570"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${textoAtual}&quot; == &quot;${valor}&quot;">
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20240927 19:18:17.571" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:17.570" endtime="20240927 19:18:17.571"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${textoAtual}&quot; != &quot;${valor}&quot;">
+<if>
+<branch type="IF" condition="&quot;${i}&quot; == &quot;${10}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</branch>
+<branch type="ELSE">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</branch>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</if>
+<status status="NOT RUN" starttime="20240927 19:18:17.571" endtime="20240927 19:18:17.571"/>
+</branch>
+<status status="PASS" starttime="20240927 19:18:17.570" endtime="20240927 19:18:17.571"/>
+</if>
+<status status="PASS" starttime="20240927 19:18:16.544" endtime="20240927 19:18:17.572"/>
+</iter>
+<status status="PASS" starttime="20240927 19:18:16.544" endtime="20240927 19:18:17.572"/>
+</for>
+<status status="PASS" starttime="20240927 19:18:15.044" endtime="20240927 19:18:17.572"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${FAKER_LASTNAME}</var>
+<msg timestamp="20240927 19:18:17.572" level="INFO">${FAKER_LASTNAME} = da Cruz</msg>
+<status status="PASS" starttime="20240927 19:18:17.572" endtime="20240927 19:18:17.572"/>
+</kw>
+<kw name="Preencher campo" library="ContextoSteps">
+<arg>${InputLastName}</arg>
+<arg>${FAKER_LASTNAME}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:17.572" endtime="20240927 19:18:17.590"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:17.590" level="INFO">Clicking element 'xpath=//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:17.590" endtime="20240927 19:18:17.634"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:18.634" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:17.634" endtime="20240927 19:18:18.634"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240927 19:18:18.634" endtime="20240927 19:18:18.662"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:18.962" level="INFO">Slept 300 milliseconds</msg>
+<status status="PASS" starttime="20240927 19:18:18.662" endtime="20240927 19:18:18.962"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:18.964" level="INFO">Typing text 'da Cruz' into text field 'xpath=//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:18.962" endtime="20240927 19:18:19.029"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:20.029" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:19.029" endtime="20240927 19:18:20.029"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${textoAtual}</var>
+<arg>${elemento}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240927 19:18:20.049" level="INFO">${textoAtual} = da Cruz</msg>
+<status status="PASS" starttime="20240927 19:18:20.029" endtime="20240927 19:18:20.049"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${textoAtual}&quot; == &quot;${valor}&quot;">
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20240927 19:18:20.049" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20240927 19:18:20.049" endtime="20240927 19:18:20.049"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:20.049" endtime="20240927 19:18:20.049"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${textoAtual}&quot; != &quot;${valor}&quot;">
+<if>
+<branch type="IF" condition="&quot;${i}&quot; == &quot;${10}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:20.049" endtime="20240927 19:18:20.050"/>
+</branch>
+<branch type="ELSE">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</branch>
+<status status="NOT RUN" starttime="20240927 19:18:20.049" endtime="20240927 19:18:20.050"/>
+</if>
+<status status="NOT RUN" starttime="20240927 19:18:20.049" endtime="20240927 19:18:20.050"/>
+</branch>
+<status status="PASS" starttime="20240927 19:18:20.049" endtime="20240927 19:18:20.050"/>
+</if>
+<status status="PASS" starttime="20240927 19:18:19.029" endtime="20240927 19:18:20.050"/>
+</iter>
+<status status="PASS" starttime="20240927 19:18:19.029" endtime="20240927 19:18:20.050"/>
+</for>
+<status status="PASS" starttime="20240927 19:18:17.572" endtime="20240927 19:18:20.050"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${FAKER_EMAIL}</var>
+<msg timestamp="20240927 19:18:20.050" level="INFO">${FAKER_EMAIL} = liviacastro@example.com</msg>
+<status status="PASS" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.050"/>
+</kw>
+<kw name="Preencher campo" library="ContextoSteps">
+<arg>${InputEmail}</arg>
+<arg>${FAKER_EMAIL}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:20.050" endtime="20240927 19:18:20.072"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:20.073" level="INFO">Clicking element 'xpath=//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:20.072" endtime="20240927 19:18:20.119"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:21.119" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:20.119" endtime="20240927 19:18:21.119"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240927 19:18:21.119" endtime="20240927 19:18:21.142"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:21.443" level="INFO">Slept 300 milliseconds</msg>
+<status status="PASS" starttime="20240927 19:18:21.142" endtime="20240927 19:18:21.443"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:21.443" level="INFO">Typing text 'liviacastro@example.com' into text field 'xpath=//input[@id="email"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:21.443" endtime="20240927 19:18:21.529"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:22.531" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:21.529" endtime="20240927 19:18:22.531"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${textoAtual}</var>
+<arg>${elemento}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240927 19:18:22.550" level="INFO">${textoAtual} = liviacastro@example.com</msg>
+<status status="PASS" starttime="20240927 19:18:22.532" endtime="20240927 19:18:22.550"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${textoAtual}&quot; == &quot;${valor}&quot;">
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20240927 19:18:22.550" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20240927 19:18:22.550" endtime="20240927 19:18:22.551"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:22.550" endtime="20240927 19:18:22.551"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${textoAtual}&quot; != &quot;${valor}&quot;">
+<if>
+<branch type="IF" condition="&quot;${i}&quot; == &quot;${10}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</branch>
+<branch type="ELSE">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</branch>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</if>
+<status status="NOT RUN" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</branch>
+<status status="PASS" starttime="20240927 19:18:22.550" endtime="20240927 19:18:22.551"/>
+</if>
+<status status="PASS" starttime="20240927 19:18:21.529" endtime="20240927 19:18:22.551"/>
+</iter>
+<status status="PASS" starttime="20240927 19:18:21.529" endtime="20240927 19:18:22.551"/>
+</for>
+<status status="PASS" starttime="20240927 19:18:20.050" endtime="20240927 19:18:22.551"/>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<var>${FAKER_PHONE}</var>
+<msg timestamp="20240927 19:18:22.551" level="INFO">${FAKER_PHONE} = 31 4541 1615</msg>
+<status status="PASS" starttime="20240927 19:18:22.551" endtime="20240927 19:18:22.551"/>
+</kw>
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${InputFone}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:22.552" endtime="20240927 19:18:22.571"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:23.571" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:22.571" endtime="20240927 19:18:23.571"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:23.572" level="INFO">Clicking element 'xpath=//input[@id="phone"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:23.571" endtime="20240927 19:18:23.613"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:24.614" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:23.614" endtime="20240927 19:18:24.614"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:22.551" endtime="20240927 19:18:24.614"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${InputFone}</arg>
+<arg>${FAKER_PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:24.614" level="INFO">Typing text '31 4541 1615' into text field 'xpath=//input[@id="phone"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:24.614" endtime="20240927 19:18:24.697"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>none</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240927 19:18:24.698" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20240927 19:18:24.698" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20240927 19:18:24.698" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20240927 19:18:24.697" endtime="20240927 19:18:24.704"/>
+</kw>
+<kw name="Preencher campo" library="ContextoSteps">
+<arg>${InputAjuda}</arg>
+<arg>${PreenchimentoAjuda}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:24.705" endtime="20240927 19:18:24.724"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:24.725" level="INFO">Clicking element 'xpath=//textarea[@id="open-text-area"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:24.725" endtime="20240927 19:18:24.762"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:25.762" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:24.762" endtime="20240927 19:18:25.762"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240927 19:18:25.762" endtime="20240927 19:18:25.787"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:26.089" level="INFO">Slept 300 milliseconds</msg>
+<status status="PASS" starttime="20240927 19:18:25.788" endtime="20240927 19:18:26.089"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:26.090" level="INFO">Typing text 'TESTE AUTOMAÇÃO' into text field 'xpath=//textarea[@id="open-text-area"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:26.089" endtime="20240927 19:18:26.155"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:27.155" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:26.155" endtime="20240927 19:18:27.155"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${textoAtual}</var>
+<arg>${elemento}</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240927 19:18:27.172" level="INFO">${textoAtual} = TESTE AUTOMAÇÃO</msg>
+<status status="PASS" starttime="20240927 19:18:27.156" endtime="20240927 19:18:27.172"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${textoAtual}&quot; == &quot;${valor}&quot;">
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<msg timestamp="20240927 19:18:27.173" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${textoAtual}&quot; != &quot;${valor}&quot;">
+<if>
+<branch type="IF" condition="&quot;${i}&quot; == &quot;${10}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>*** Falha ao tentar preencher o campo ${elemento}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</branch>
+<branch type="ELSE">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</kw>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</branch>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</if>
+<status status="NOT RUN" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</branch>
+<status status="PASS" starttime="20240927 19:18:27.173" endtime="20240927 19:18:27.173"/>
+</if>
+<status status="PASS" starttime="20240927 19:18:26.155" endtime="20240927 19:18:27.173"/>
+</iter>
+<status status="PASS" starttime="20240927 19:18:26.155" endtime="20240927 19:18:27.173"/>
+</for>
+<status status="PASS" starttime="20240927 19:18:24.704" endtime="20240927 19:18:27.174"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:15.043" endtime="20240927 19:18:27.174"/>
+</kw>
+<kw name="And selecionar um tipo de produto" library="preenchimento_forms_step">
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${SelecProd}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:27.175" endtime="20240927 19:18:27.198"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:28.199" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:27.199" endtime="20240927 19:18:28.199"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:28.200" level="INFO">Clicking element 'xpath=//option[@value='mentoria']'.</msg>
+<status status="PASS" starttime="20240927 19:18:28.199" endtime="20240927 19:18:28.230"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:29.230" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:28.230" endtime="20240927 19:18:29.230"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:27.174" endtime="20240927 19:18:29.230"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240927 19:18:29.343" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240927 19:18:29.230" endtime="20240927 19:18:29.343"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:27.174" endtime="20240927 19:18:29.343"/>
+</kw>
+<kw name="And selecionar o arquivo" library="preenchimento_forms_step">
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>${BtnUpload}</arg>
+<arg>${arquivos_upload}\\Teste.pdf</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20240927 19:18:29.345" level="INFO">Sending C:\Users\Thalita\Downloads\Thalitafortes\teste_qa_jr\06-files\Teste.pdf to browser.</msg>
+<status status="PASS" starttime="20240927 19:18:29.344" endtime="20240927 19:18:29.377"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:29.344" endtime="20240927 19:18:29.377"/>
+</kw>
+<kw name="And clicar em enviar" library="preenchimento_forms_step">
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${BtnSubmit}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:29.378" endtime="20240927 19:18:29.396"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:30.396" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:29.396" endtime="20240927 19:18:30.396"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:18:30.397" level="INFO">Clicking element 'xpath=//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20240927 19:18:30.396" endtime="20240927 19:18:30.439"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:18:31.440" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:18:30.440" endtime="20240927 19:18:31.440"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:29.378" endtime="20240927 19:18:31.440"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:29.377" endtime="20240927 19:18:31.440"/>
+</kw>
+<kw name="Then o sistema deverá enviar o formulario com sucesso" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MsgSuccess}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:18:31.441" endtime="20240927 19:18:31.462"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:31.441" endtime="20240927 19:18:31.462"/>
+</kw>
+<kw name="Encerra sessao" library="ContextoSteps" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240927 19:18:31.562" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240927 19:18:31.462" endtime="20240927 19:18:31.562"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240927 19:18:31.562" endtime="20240927 19:18:33.701"/>
+</kw>
+<status status="PASS" starttime="20240927 19:18:31.462" endtime="20240927 19:18:33.701"/>
+</kw>
+<doc>Esse teste realizar envio do formulario com um valor de produto selecionado</doc>
+<status status="PASS" starttime="20240927 19:18:13.008" endtime="20240927 19:18:33.702"/>
+</test>
+<doc>Nessa tela será adicionado todos os cenários de testes</doc>
+<status status="PASS" starttime="20240927 19:18:12.354" endtime="20240927 19:18:33.703"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Forms">Preenchimento Forms</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

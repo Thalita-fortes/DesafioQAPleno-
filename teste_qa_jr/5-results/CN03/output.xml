@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240927 19:16:20.220" rpa="false" schemaversion="4">
+<suite id="s1" name="Preenchimento Forms" source="C:\Users\Thalita\Downloads\Thalitafortes\teste_qa_jr\01-resources\CenariosTestes\preenchimento_forms.robot">
+<test id="s1-t1" name="CN03 - Validar acesso a politica de privacidade" line="29">
+<kw name="Nova sessao" library="ContextoSteps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240927 19:16:20.903" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<status status="PASS" starttime="20240927 19:16:20.903" endtime="20240927 19:16:22.840"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240927 19:16:22.840" endtime="20240927 19:16:22.876"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:20.903" endtime="20240927 19:16:22.876"/>
+</kw>
+<kw name="Given que estou na tela inicial do forms" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TitleTela}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:22.877" endtime="20240927 19:16:22.903"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Forneça o máximo de informações, por favor.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:16:22.918" level="INFO">Current page contains text 'Forneça o máximo de informações, por favor.'.</msg>
+<status status="PASS" starttime="20240927 19:16:22.903" endtime="20240927 19:16:22.918"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:22.877" endtime="20240927 19:16:22.918"/>
+</kw>
+<kw name="When clicar no link de politica de privacidade" library="preenchimento_forms_step">
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${PoliticaPriva}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:22.919" endtime="20240927 19:16:22.940"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:16:23.942" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:16:22.940" endtime="20240927 19:16:23.942"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:16:23.943" level="INFO">Clicking element 'xpath=//a[@href="privacy.html"]'.</msg>
+<status status="PASS" starttime="20240927 19:16:23.942" endtime="20240927 19:16:24.028"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:16:25.028" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:16:24.028" endtime="20240927 19:16:25.028"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:22.919" endtime="20240927 19:16:25.028"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:22.919" endtime="20240927 19:16:25.028"/>
+</kw>
+<kw name="Then o sistema deverá redirecionar o usuario para a tela de politicas de privacidade" library="preenchimento_forms_step">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20240927 19:16:25.029" endtime="20240927 19:16:25.039"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TitleTela}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:25.039" endtime="20240927 19:16:25.069"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20240927 19:16:25.069" endtime="20240927 19:16:25.086"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20240927 19:16:25.086" endtime="20240927 19:16:25.092"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:25.029" endtime="20240927 19:16:25.092"/>
+</kw>
+<kw name="Encerra sessao" library="ContextoSteps" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240927 19:16:25.221" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240927 19:16:25.093" endtime="20240927 19:16:25.221"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240927 19:16:25.221" endtime="20240927 19:16:27.330"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:25.093" endtime="20240927 19:16:27.330"/>
+</kw>
+<doc>Esse teste realiza a visualização do acesso a politica de privacidade</doc>
+<status status="PASS" starttime="20240927 19:16:20.902" endtime="20240927 19:16:27.331"/>
+</test>
+<doc>Nessa tela será adicionado todos os cenários de testes</doc>
+<status status="PASS" starttime="20240927 19:16:20.221" endtime="20240927 19:16:27.333"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Forms">Preenchimento Forms</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

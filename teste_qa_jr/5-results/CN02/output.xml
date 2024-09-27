@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240927 19:16:03.771" rpa="false" schemaversion="4">
+<suite id="s1" name="Preenchimento Forms" source="C:\Users\Thalita\Downloads\Thalitafortes\teste_qa_jr\01-resources\CenariosTestes\preenchimento_forms.robot">
+<test id="s1-t1" name="CN02 - Validar campos obrigatorios" line="21">
+<kw name="Nova sessao" library="ContextoSteps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240927 19:16:04.436" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<status status="PASS" starttime="20240927 19:16:04.436" endtime="20240927 19:16:06.430"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240927 19:16:06.430" endtime="20240927 19:16:06.454"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:04.436" endtime="20240927 19:16:06.454"/>
+</kw>
+<kw name="Given que estou na tela inicial do forms" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TitleTela}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.455" endtime="20240927 19:16:06.483"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Forneça o máximo de informações, por favor.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:16:06.498" level="INFO">Current page contains text 'Forneça o máximo de informações, por favor.'.</msg>
+<status status="PASS" starttime="20240927 19:16:06.483" endtime="20240927 19:16:06.498"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:06.455" endtime="20240927 19:16:06.498"/>
+</kw>
+<kw name="When os campos forem exibidos" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${InputName}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.498" endtime="20240927 19:16:06.524"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SelectProd}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.524" endtime="20240927 19:16:06.546"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Qual seu meio de contato preferencial?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:16:06.561" level="INFO">Current page contains text 'Qual seu meio de contato preferencial?'.</msg>
+<status status="PASS" starttime="20240927 19:16:06.546" endtime="20240927 19:16:06.561"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Como podemos te ajudar?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:16:06.574" level="INFO">Current page contains text 'Como podemos te ajudar?'.</msg>
+<status status="PASS" starttime="20240927 19:16:06.561" endtime="20240927 19:16:06.574"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Adicione um anexo</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:16:06.586" level="INFO">Current page contains text 'Adicione um anexo'.</msg>
+<status status="PASS" starttime="20240927 19:16:06.574" endtime="20240927 19:16:06.586"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:06.498" endtime="20240927 19:16:06.586"/>
+</kw>
+<kw name="Then o sistema deverá exibir uma legenda informando os campos obrigatorios" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CampoObrigatorio01}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.587" endtime="20240927 19:16:06.609"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CampoObrigatorio02}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.610" endtime="20240927 19:16:06.627"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CampoObrigatorio03}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.627" endtime="20240927 19:16:06.649"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CampoObrigatorio04}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:16:06.649" endtime="20240927 19:16:06.668"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:06.586" endtime="20240927 19:16:06.669"/>
+</kw>
+<kw name="Encerra sessao" library="ContextoSteps" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240927 19:16:06.800" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240927 19:16:06.669" endtime="20240927 19:16:06.800"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240927 19:16:06.800" endtime="20240927 19:16:08.924"/>
+</kw>
+<status status="PASS" starttime="20240927 19:16:06.669" endtime="20240927 19:16:08.924"/>
+</kw>
+<doc>Esse teste realiza a validação dos campos obrigatorios</doc>
+<status status="PASS" starttime="20240927 19:16:04.435" endtime="20240927 19:16:08.924"/>
+</test>
+<doc>Nessa tela será adicionado todos os cenários de testes</doc>
+<status status="PASS" starttime="20240927 19:16:03.773" endtime="20240927 19:16:08.926"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Forms">Preenchimento Forms</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

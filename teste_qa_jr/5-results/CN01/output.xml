@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240927 19:15:45.500" rpa="false" schemaversion="4">
+<suite id="s1" name="Preenchimento Forms" source="C:\Users\Thalita\Downloads\Thalitafortes\teste_qa_jr\01-resources\CenariosTestes\preenchimento_forms.robot">
+<test id="s1-t1" name="CN01 - Validar mensagem de campos obrigatorios" line="13">
+<kw name="Nova sessao" library="ContextoSteps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240927 19:15:46.312" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<status status="PASS" starttime="20240927 19:15:46.312" endtime="20240927 19:15:48.313"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240927 19:15:48.313" endtime="20240927 19:15:48.342"/>
+</kw>
+<status status="PASS" starttime="20240927 19:15:46.312" endtime="20240927 19:15:48.342"/>
+</kw>
+<kw name="Given que estou na tela inicial do forms" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TitleTela}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:15:48.343" endtime="20240927 19:15:48.368"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Forneça o máximo de informações, por favor.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240927 19:15:48.384" level="INFO">Current page contains text 'Forneça o máximo de informações, por favor.'.</msg>
+<status status="PASS" starttime="20240927 19:15:48.368" endtime="20240927 19:15:48.384"/>
+</kw>
+<status status="PASS" starttime="20240927 19:15:48.343" endtime="20240927 19:15:48.384"/>
+</kw>
+<kw name="When realizar o envio do formulario sem preencher os campos obrigatorios" library="preenchimento_forms_step">
+<kw name="Click no Item" library="ContextoSteps">
+<arg>${BtnSubmit}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:15:48.385" endtime="20240927 19:15:48.409"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:15:49.410" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:15:48.410" endtime="20240927 19:15:49.410"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elemento}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240927 19:15:49.410" level="INFO">Clicking element 'xpath=//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20240927 19:15:49.410" endtime="20240927 19:15:49.462"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240927 19:15:50.463" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240927 19:15:49.463" endtime="20240927 19:15:50.463"/>
+</kw>
+<status status="PASS" starttime="20240927 19:15:48.385" endtime="20240927 19:15:50.463"/>
+</kw>
+<status status="PASS" starttime="20240927 19:15:48.385" endtime="20240927 19:15:50.463"/>
+</kw>
+<kw name="Then o sistema deverá exibir uma mensagem de alerta" library="preenchimento_forms_step">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MsgErro}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240927 19:15:50.465" endtime="20240927 19:15:50.487"/>
+</kw>
+<status status="PASS" starttime="20240927 19:15:50.465" endtime="20240927 19:15:50.487"/>
+</kw>
+<kw name="Encerra sessao" library="ContextoSteps" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240927 19:15:50.602" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240927 19:15:50.488" endtime="20240927 19:15:50.602"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240927 19:15:50.602" endtime="20240927 19:15:52.702"/>
+</kw>
+<status status="PASS" starttime="20240927 19:15:50.488" endtime="20240927 19:15:52.702"/>
+</kw>
+<doc>Esse teste realiza a validação da mensagem de campos obrigatorios</doc>
+<status status="PASS" starttime="20240927 19:15:46.310" endtime="20240927 19:15:52.702"/>
+</test>
+<doc>Nessa tela será adicionado todos os cenários de testes</doc>
+<status status="PASS" starttime="20240927 19:15:45.501" endtime="20240927 19:15:52.704"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Forms">Preenchimento Forms</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
